@@ -4,13 +4,12 @@ package com.javarush.task.task19.task1927;
 Контекстная реклама
 */
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 public class Solution {
     public static TestString testString = new TestString();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         PrintStream prOrigin = System.out;
         ByteArrayOutputStream bt = new ByteArrayOutputStream();
         PrintStream prNew = new PrintStream(bt);
@@ -19,20 +18,25 @@ public class Solution {
         testString.printSomething();
         System.setOut(prOrigin);
 
-        String[] arrSt = bt.toString().trim().split("[\\n]");
-        System.out.println(arrSt.length);
-        for (int i = 0, j = 0; i < arrSt.length; i++) {
-            if (j < 2) {
-                System.out.println(arrSt[i]);
-                j++;
-            } else {
-                j = 0;
+        String[] arrSt = bt.toString().split(System.lineSeparator());
+        for (int i = 0; i < arrSt.length; i++) {
+            System.out.println(arrSt[i]);
+            if ((i - 1) % 2 == 0) {
                 System.out.println("JavaRush - курсы Java онлайн");
-                j++;
-                System.out.println(arrSt[i]);
             }
         }
-//        System.out.println(bt.toString());    if (Character.isAlphabetic((char) tmpInt))
+
+//        BufferedReader bf = new BufferedReader(new InputStreamReader(
+//                new ByteArrayInputStream(bt.toString().getBytes())));
+//        int i = 0;
+//        while (bf.ready()) {
+//            i++;
+//            System.out.println(bf.readLine());
+//            if ((i % 2) == 0) {
+//                System.out.println("JavaRush - курсы Java онлайн");
+//            }
+//        }
+//        bf.close();
 
     }
 
@@ -46,11 +50,4 @@ public class Solution {
         }
     }
 
-//    public static class ByteArr extends ByteArrayOutputStream {
-//
-//    }
-
-//    public static class ReaderWrap extends PrintStream {
-//
-//    }
 }
