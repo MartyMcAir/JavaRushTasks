@@ -1,4 +1,4 @@
-#Java Rush _ Code Tusks: 
+#Java Rush _ Code Tusks (11_2019): 
 1) https://javarush.ru 
 2) https://codegym.cc/
 3) z_JavaRush_Dow - плагины для Intellij iDEA и настройки
