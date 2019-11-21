@@ -6,12 +6,11 @@
 *.iml
 *.iws
 *.class
-*.info
 *.properties
-*.jar
+#*.jar
 *.war
 *.ear
-*.zip
+#*.zip
 *.rar
 
 /4.JavaCollections/
@@ -19,6 +18,5 @@
 /out/
 /JavaRushPlugin.properties
 /Instruction.png
-/out.log
 /out.log.*
 123

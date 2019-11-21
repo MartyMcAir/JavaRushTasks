@@ -1,9 +1,7 @@
 package com.javarush.task.task21.task2111;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -74,5 +72,29 @@ public class Solution {
 
     public static void main(String[] args) {
         // для проверки надо создать Connection с DataBase _ создать там такую же table и потом тока юзать тестить
+        try (Connection con = SolExp.connect("z_test")) {
+            System.out.println("Подключение успешно выполнено");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Connection connect(String db) {
+        Connection con = null;
+        try {
+            // This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3310/" + db +
+                            "?characterEncoding=utf8&serverTimezone=UTC", "test_user", "123689");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Драйвер не найден");
+            System.exit(1);
+        } catch (SQLException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+            System.exit(1);
+        }
+        return con;
     }
 }
+
