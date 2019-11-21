@@ -1,7 +1,7 @@
 #Java Rush _ Code Tusks: 
 1) https://javarush.ru 
 2) https://codegym.cc/
-3) z_JavaRush_Dow - плагины для Intellij iDEA и настройки
+3) z_JavaRush_Dow - РїР»Р°РіРёРЅС‹ РґР»СЏ Intellij iDEA Рё РЅР°СЃС‚СЂРѕР№РєРё
 4) JDK 8-10
 5) IntelliJ IDEA 2018.3.2 (Community Edition)
 Build #IC-183.4886.37, built on December 17, 2018
