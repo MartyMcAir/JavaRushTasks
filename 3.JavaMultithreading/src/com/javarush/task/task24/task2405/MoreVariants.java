@@ -3,7 +3,7 @@ package com.javarush.task.task24.task2405;
 /* 
 Black box
 */
-public class Solution implements Action {
+public class MoreVariants implements Action {
     // abstract FirstClass - инкрементит эту перменную в своем конструкторе
     public static int countActionObjects;
 
@@ -64,7 +64,7 @@ public class Solution implements Action {
     };
 
 
-    public Solution(int param) {
+    public MoreVariants(int param) {
         this.param = param;
     }
 
@@ -88,11 +88,11 @@ public class Solution implements Action {
      * Count of created Action objects is 3
      */
     public static void main(String[] args) {
-        Solution solution = new Solution(5);
+        MoreVariants solution = new MoreVariants(5);
         solution.someAction();
         System.out.println("Count of created Action objects is " + countActionObjects);
 
-        solution = new Solution(-1);
+        solution = new MoreVariants(-1);
         solution.someAction();
         System.out.println("Count of created Action objects is " + countActionObjects);
     }

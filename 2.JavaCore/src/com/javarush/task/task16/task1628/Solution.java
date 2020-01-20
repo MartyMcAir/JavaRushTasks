@@ -55,7 +55,8 @@ public class Solution {
 //            }
             while (!isInterrupted()) {
                 try {
-                    if(reader.ready()){ // непонял вообще почему с этим пропустило в то время как решение выше тоже неплохо
+                    // непонял вообще почему с этим пропустило в то время как решение выше тоже неплохо
+                    if(reader.ready()){
                         result.add(reader.readLine());
                         readStringCount.incrementAndGet();
                     }

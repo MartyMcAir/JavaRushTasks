@@ -14,7 +14,8 @@ import java.awt.event.ActionListener;
 
 // View - явл приемником событий т.к. наследует JFrame
 // и View - явл источником событий т.к. реаллизует ActionListener
-public class View extends JFrame implements ActionListener {
+public class View_19 extends JFrame implements ActionListener {
+    private View viewOrigin;
     private Controller controller;
     private JTabbedPane tabbedPane = new JTabbedPane(); // панель с двумя вкладками
     // будет размещен на первой вкладке.
@@ -25,7 +26,7 @@ public class View extends JFrame implements ActionListener {
     // поле UndoListener undoListener, проинициализируй его используя undoManager.
     private UndoListener undoListener = new UndoListener(undoManager);
 
-    public View() {
+    public View_19() {
         //  должен устанав внеш вид и поведен (look and feel) приложения такими же, как это определено в системе.
         // Конструктор не должен кидать исключений, только логировать их с помощью ExceptionHandler
         // Подсказа: для реализации задания используй класс UIManager.
@@ -71,7 +72,7 @@ public class View extends JFrame implements ActionListener {
         tabbedPane.addTab("Текст", jScrollTextPane);
         tabbedPane.setPreferredSize(new Dimension(300, 300));
         // Создавать объект класса TabbedPaneChangeListener и устанавливать его в качестве слушателя измен в tabbedPane
-        TabbedPaneChangeListener changeListener = new TabbedPaneChangeListener(this);
+        TabbedPaneChangeListener changeListener = new TabbedPaneChangeListener(viewOrigin);
         tabbedPane.addChangeListener(changeListener);
         // Добавлять по центру панели контента текущего фрейма нашу панель с вкладками.
         // Получить панель контента текущ фрейма с помощью getContentPane(), его реализация унаследовалась от JFrame.
@@ -84,13 +85,13 @@ public class View extends JFrame implements ActionListener {
         JMenuBar jMenuBar = new JMenuBar();
         // С помощью MenuHelper инициализировать меню в следующем порядке: Файл, Редактировать, Стиль,
         // Выравнивание, Цвет, Шрифт и Помощь.
-        MenuHelper.initFileMenu(this, jMenuBar);
-        MenuHelper.initEditMenu(this, jMenuBar);
-        MenuHelper.initStyleMenu(this, jMenuBar);
-        MenuHelper.initAlignMenu(this, jMenuBar);
-        MenuHelper.initColorMenu(this, jMenuBar);
-        MenuHelper.initFontMenu(this, jMenuBar);
-        MenuHelper.initHelpMenu(this, jMenuBar);
+        MenuHelper.initFileMenu(viewOrigin, jMenuBar);
+        MenuHelper.initEditMenu(viewOrigin, jMenuBar);
+        MenuHelper.initStyleMenu(viewOrigin, jMenuBar);
+        MenuHelper.initAlignMenu(viewOrigin, jMenuBar);
+        MenuHelper.initColorMenu(viewOrigin, jMenuBar);
+        MenuHelper.initFontMenu(viewOrigin, jMenuBar);
+        MenuHelper.initHelpMenu(viewOrigin, jMenuBar);
         // Добавлять в верхнюю часть панели контента текущего фрейма нашу панель меню, аналогично тому,
         // как это мы делали с панелью вкладок. ( my: т.е. в initEditor()!? )
         getContentPane().add(jMenuBar, BorderLayout.NORTH); // BorderLayout - юзаем диспетчер компонентов
@@ -102,7 +103,7 @@ public class View extends JFrame implements ActionListener {
         // Добавлять слушателя событий нашего окна. В качестве подписчика ??? создай и использ объект кл FrameListener.
         //В качестве метода для добавления подписчика используй подходящий метод из класса Window от которого
         // наследуется и наш класс через классы JFrame и Frame.
-        FrameListener frameListener = new FrameListener(this); // обеспечивает чтоб окно можно было растягивать
+        FrameListener frameListener = new FrameListener(viewOrigin); // обеспечивает чтоб окно можно было растягивать
         this.addWindowListener(frameListener);
         setVisible(true);
     }
@@ -197,7 +198,7 @@ public class View extends JFrame implements ActionListener {
     public void showAbout() {
         // должен показывать диалоговое окно с информацией о программе. Информацию придумай сам,
         // а вот тип сообщения должен быть JOptionPane.INFORMATION_MESSAGE.
-        JOptionPane.showMessageDialog(this, "метод showAbout", "title View class",
+        JOptionPane.showMessageDialog(viewOrigin, "метод showAbout", "title View class",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 }

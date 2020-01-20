@@ -11,14 +11,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Tmp4 {
-
+public class NotMy3 {
+// код по сложности 6 из 11
     private ArrayList<String> stroka = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        String fileName = getPath()[2];
+        String fileName = getPath()[0];
+        // выдает 7 из 11
+        // Аланга Аланга Амстердам Мельбурн Нью-Йорк Киев Вашингтон
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader fr = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")));
+//        BufferedReader fr = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")));
+        BufferedReader fr = new BufferedReader(new FileReader(fileName));
         String txt;
         String stroka = "";
         while ((txt = fr.readLine()) != null) {
@@ -26,7 +29,7 @@ public class Tmp4 {
         }
         reader.close();
         fr.close();
-        String[] words = stroka.split(" ");
+        String[] words = stroka.split("\\s+"); // проблема кода была в этом месте
         //...
         StringBuilder result = getLine(words);
         System.out.println(result.toString());
@@ -57,11 +60,11 @@ public class Tmp4 {
             firstWord = list.get(0);
             //--------------- начинаю цикл перебора слова
             for (int i = 0; i < list.size(); i++) {
-                //------------ Разьиваем первоеСлово на массив символов
+                //------------ Разбиваем первоеСлово на массив символов
                 first = firstWord.toCharArray();
-                //------------второеСлово присваивает знаение элементы из списка соответствующий номеру i
+                //------------второеСлово присваивает значение элементы из списка соответствующий номеру i
                 secondWord = list.get(i);
-                //------------ Разьиваем второеСлово на массив символов
+                //------------ Разьбиваем второеСлово на массив символов
                 second = secondWord.toCharArray();
                 //------------ Если последний символ первого слова эквивалентен первому символу второго слова то:
                 if (String.valueOf(first[first.length - 1]).equalsIgnoreCase(String.valueOf(second[0]))) {

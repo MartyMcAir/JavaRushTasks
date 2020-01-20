@@ -2,7 +2,7 @@ package com.javarush.task.task32.task3209;
 
 import java.util.HashSet;
 import java.util.Set;
-
+// https://javarush.ru/quests/lectures/questmultithreading.level08.lecture15
 public class z_Tmp {
     // Сегодня мы напишем HTML редактор с графическим интерфейсом.
     // В качестве библиотеки для создания графического интерфейса воспользуемся Swing.

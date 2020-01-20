@@ -1,16 +1,19 @@
 package com.javarush.task.task22.task2209;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /*
 Составить цепочку слов
 */
-public class Solution {
+public class Solution2 {
     public static void main(String[] args) throws IOException {
         String fileName = getPath()[0];
         try (BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));

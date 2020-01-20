@@ -14,7 +14,7 @@ public class Solution {
 
         public static List<String> steps = new ArrayList<String>();
 
-        static {   // статик блок инициализации _ аполение коллекции
+        static {   // статик блок инициализации _ наполение коллекции
             steps.add("Начало игры");
             steps.add("Сбор ресурсов");
             steps.add("Рост экономики");

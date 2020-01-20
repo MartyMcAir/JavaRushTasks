@@ -6,12 +6,12 @@ import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.*;
 
-public class Controller {
+public class Controller_23 {
     private View view;
     private HTMLDocument document; // модель
     private File currentFile;
 
-    public Controller(View view) {
+    public Controller_23(View view) {
         this.view = view;
     }
 

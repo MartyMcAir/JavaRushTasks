@@ -3,7 +3,7 @@ package com.javarush.task.task24.task2405;
 /* 
 Black box
 */
-public class Solution implements Action {
+public class MyFirstV1 implements Action {
     // abstract FirstClass - инкрементит эту перменную в своем конструкторе
     public static int countActionObjects;
 
@@ -12,7 +12,7 @@ public class Solution implements Action {
     // Полю т.е. оно же просто перменная, присвоили Анонимный класс
     private Action solutionAction = new Action() {
         //!!!!! Изменения могут быть тут
-
+        // Работает но валидацию не проходит
         public void someAction() {
             //!!!!! Все изменения должны быть только тут
             SecondClass secondClass = new SecondClass() {
@@ -52,7 +52,7 @@ public class Solution implements Action {
     };
 
 
-    public Solution(int param) {
+    public MyFirstV1(int param) {
         this.param = param;
     }
 
@@ -76,11 +76,11 @@ public class Solution implements Action {
      * Count of created Action objects is 3
      */
     public static void main(String[] args) {
-        Solution solution = new Solution(5);
+        MyFirstV1 solution = new MyFirstV1(5);
         solution.someAction();
         System.out.println("Count of created Action objects is " + countActionObjects);
 
-        solution = new Solution(-1);
+        solution = new MyFirstV1(-1);
         solution.someAction();
         System.out.println("Count of created Action objects is " + countActionObjects);
     }

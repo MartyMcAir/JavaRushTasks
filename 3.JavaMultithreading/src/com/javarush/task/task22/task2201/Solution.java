@@ -1,5 +1,9 @@
 package com.javarush.task.task22.task2201;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /*
 Строки нитей или строковые нити? Вот в чем вопрос
 */

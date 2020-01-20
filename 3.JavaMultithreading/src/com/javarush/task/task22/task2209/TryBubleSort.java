@@ -10,14 +10,24 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.Collectors;
 
-public class Tmp5 {
+public class TryBubleSort {
+    // из Киев Нью-Йорк    Алмата
+    //   Крымск
+    //Амстердам    Вена
+    //   Мельбурн               Аланга
+    //		Москва
+    //Вашингтон
+    // НЕ выдает _ Правильной последовательности
+    // Мельбурн Нью-Йорк Крымск Киев Вена Аланга Амстердам Москва Алмата Вашингтон
+    // ПОстоянно какие-то неурядицы и ошибки с загвостками
     private static ArrayList<Word> listWords = new ArrayList<>();
 
     public static void main(String[] args) {
         String fileName = SimpleMethods.getPath()[2];
         String[] words = null;
         try (BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
-             BufferedReader fileReader = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")))) {
+             BufferedReader fileReader = new BufferedReader(new FileReader(fileName))) {
+            //             BufferedReader fileReader = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")))) {
             String content = fileReader.lines().collect(Collectors.joining(" "));
             words = content.split("\\s+");
         } catch (IOException e) {

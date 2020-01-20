@@ -11,7 +11,7 @@ import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class MenuHelper { // по сути класс хранит всю древовидную структуру менющек
+public class MenuHelper_16 { // по сути класс хранит всю древовидную структуру менющек
     public static JMenuItem addMenuItem(JMenu parent, String text, ActionListener actionListener) {
         // Создавать новый пункт меню JMenuItem, используя text.
         //7.1.2. Устанавливать этому пункту слушателя действий с помощью метода addActionListener().

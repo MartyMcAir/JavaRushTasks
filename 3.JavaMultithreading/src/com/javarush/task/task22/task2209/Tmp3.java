@@ -5,14 +5,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class Tmp2 {
+public class Tmp3 {
     public static void main(String[] args) throws IOException {
         String fileName = getPath()[0];
         try (BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
-             BufferedReader fileReader = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")))) {
+             BufferedReader fileReader = new BufferedReader(new FileReader(fileName))) {
+//             BufferedReader fileReader = new BufferedReader(new FileReader(fileName, Charset.forName("cp1251")))) {
             String content = fileReader.lines().collect(Collectors.joining(" "));
             String[] words;
             if (content.isEmpty()) {
@@ -65,18 +69,36 @@ public class Tmp2 {
 
     // Подбирает найболее подходящее след. слово
     public static String getComparableWord(List<String> list, String word) {
+        ArrayList<String> compareWords = new ArrayList<>();
+
         String res = null, current = "", letter = word.substring(word.length() - 1).toLowerCase();
         boolean flag = false;
         for (int i = 0; i < list.size(); i++) {
             current = list.get(i);
             if (current.toLowerCase().startsWith(letter)) {
-                res = current;
+                compareWords.add(current);
                 flag = true;
-                break; // если найдено сразу прерываем
             }
         }
+
+        if (compareWords.size() == 1) {
+            res = compareWords.get(0);
+        } else {
+//            String[] strArr = (String[]) list.toArray();
+//            res = getComparableWord(compareWords, strArr);
+        }
+
         if (!flag) {
             list.add(word); // если вставка не удалась добавляем в конец списка
+        }
+        return res;
+    }
+
+    public static String getWordAlotRibire(ArrayList<String> list, String[] strArr) {
+        String res = null;
+        ArrayList<Integer> listReiting = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+
         }
         return res;
     }
