@@ -6,7 +6,10 @@
 *.iml
 *.iws
 *.class
+# не обрабатывать файлы, имя которых заканчивается на .properties
 *.properties
+# НО отслеживать файл log4j.properties, несмотря на то, что мы игнорируем все .properties файлы с помощью предыдущего правила
+!log4j.properties
 *.jar
 *.war
 *.ear
