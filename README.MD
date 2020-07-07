@@ -17,7 +17,7 @@
 - JDK 8
 
 
-# Текст ниже взят from https://gitlab.resprojects.ru/mrresident/jrhw/tree/master
+### Текст ниже взят from https://gitlab.resprojects.ru/mrresident/jrhw/tree/master
 ## Раздел Java Syntax
 
 ```
