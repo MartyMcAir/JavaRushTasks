@@ -1,4 +1,4 @@
-#Java Rush _ Code Tusks (11_2019): 
+# Java Rush _ Code Tusks (11_2019): 
 ###### https://javarush.ru 
 ###### https://codegym.cc/
 
@@ -13,7 +13,7 @@
 
 ## Technology highlights:
 
-- Maven 3.6
+- Maven 3.0
 - JDK 8
 
 
